@@ -1,0 +1,54 @@
+# The GitHub Actions workflow overrides baseURL automatically when deploying.
+baseURL = "https://YOUR-GITHUB-USERNAME.github.io/"
+locale = "en-us"
+title = "Justin Dorjee Corke"
+theme = "hugo-theme-nightfall"
+
+[markup.goldmark.renderer]
+  unsafe = true
+  hardWraps = true
+
+[menu]
+  [[menu.header]]
+    name = "research"
+    weight = 1
+    url = "research/"
+  [[menu.header]]
+    name = "projects"
+    weight = 2
+    url = "projects/"
+  [[menu.header]]
+    name = "cv"
+    weight = 3
+    url = "cv/"
+
+[params]
+  user = "justin"
+  hostname = "corke"
+  SiteDescription = "Justin Dorjee Corke: statistician working on game theory, multi-agent systems and networks."
+  openLinksInNewTab = true
+  showMetadata = false
+  footerHtml = "© 2026 Justin Dorjee Corke · built with <a class='footerLink' href='https://gohugo.io'>Hugo</a> and <a class='footerLink' href='https://github.com/LordMathis/hugo-theme-nightfall'>Nightfall</a>"
+
+  # Seconds each project stays on screen in the homepage slideshow
+  slideSeconds = 5
+
+  [params.styles]
+    color = "blue"
+
+  [params.author]
+    name = "Justin Dorjee Corke"
+    email = "jcorkeacademia@gmail.com"
+    photo = "/images/me.jpg"
+
+# Optional profile links shown under your email on the homepage.
+# Uncomment and fill in the ones you want; they only appear once set.
+# [[params.links]]
+#   name = "GitHub"
+#   url = "https://github.com/YOUR-USERNAME"
+# [[params.links]]
+#   name = "LinkedIn"
+#   url = "https://www.linkedin.com/in/YOUR-PROFILE"
+# [[params.links]]
+#   name = "Scholar"
+#   url = "https://scholar.google.com/citations?user=YOUR-ID"

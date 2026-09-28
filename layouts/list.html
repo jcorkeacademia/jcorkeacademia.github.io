@@ -1,0 +1,18 @@
+{{ define "title"}}{{ .Title }} | {{ site.Params.author.name }}{{ end }}
+
+{{ define "main" }}
+<div>
+  <div class="listHeader"><h1>{{ .Title }}</h1></div>
+  {{ with .Content }}<div class="listContent">{{ . }}</div>{{ end }}
+  <div role="list">
+    {{ range .RegularPages.ByWeight }}
+      <div class="postListItem" role="listitem">
+        <a class="postListLink" href="{{ .RelPermalink }}">
+          <div class="postHeader"><span class="postTitle listTitle">{{ .Title }}</span></div>
+        </a>
+        {{ with .Params.summary }}<div class="postExcerpt">{{ . }}</div>{{ end }}
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

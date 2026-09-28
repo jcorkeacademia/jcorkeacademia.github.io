@@ -1,0 +1,18 @@
+{{ with resources.Get "css/custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+
+{{/* Browser tab icon */}}
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon-48.png" | relURL }}" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+
+{{/* Link previews when the site is shared (iMessage, Slack, LinkedIn, X) */}}
+{{ $title := cond .IsHome site.Params.author.name (printf "%s | %s" .Title site.Params.author.name) }}
+{{ $desc := .Params.summary | default site.Params.SiteDescription }}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ site.Params.author.photo | absURL }}">
+<meta name="twitter:card" content="summary">

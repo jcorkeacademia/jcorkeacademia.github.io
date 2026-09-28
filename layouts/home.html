@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <title>{{ site.Params.author.name }}</title>
+  {{ partial "head.html" . }}
+</head>
+<body class="is-home">
+<div class="flexWrapper">
+  {{ partial "header.html" . }}
+
+  <div class="content vertical">
+    <main class="main home">
+
+      {{/* Row 1: education path (compact) */}}
+      <section class="edu" aria-label="Education">
+        {{ range $i, $e := hugo.Data.education }}
+          {{ if $i }}<span class="edu-arrow" aria-hidden="true">&#10230;</span>{{ end }}
+          <a class="edu-item" href="{{ $e.url }}" target="_blank" rel="noopener" title="{{ $e.degree }}, {{ $e.detail }} · {{ $e.school }}">
+            <img class="edu-crest" src="{{ $e.crest | relURL }}" alt="{{ $e.school }} crest" width="52" height="52">
+            <span class="edu-text">
+              <span class="edu-school">{{ $e.school }}</span>
+              <span class="edu-degree">{{ $e.degree }} · {{ $e.year }}</span>
+            </span>
+          </a>
+        {{ end }}
+      </section>
+
+      {{/* Row 2: photo + name | bio */}}
+      <section class="intro">
+        <div class="intro-me">
+          <img class="portrait" src="{{ site.Params.author.photo | relURL }}" alt="Photo of {{ site.Params.author.name }}">
+          <h1 class="name">{{ site.Params.author.name }}</h1>
+          <a class="email" href="mailto:{{ site.Params.author.email }}">{{ site.Params.author.email }}</a>
+          {{ with site.Params.links }}
+          <nav class="profile-links" aria-label="Profiles">
+            {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+          </nav>
+          {{ end }}
+        </div>
+        <div class="bio">
+          {{ .Content }}
+        </div>
+      </section>
+
+      {{/* Row 3: interests | project slideshow */}}
+      <section class="work">
+        <div class="interests">
+          <h2 class="section-label">Stuff I do</h2>
+          <ul>
+            {{ range hugo.Data.interests }}
+              <li><a href="{{ .url | relURL }}">{{ .label }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="showcase-col">
+        <h2 class="section-label">Selected work</h2>
+        <div class="showcase" data-interval="{{ site.Params.slideSeconds | default 5 }}" aria-roledescription="carousel" aria-label="Projects">
+          <div class="slides">
+            {{ range $i, $p := hugo.Data.projects }}
+              <a class="slide{{ if eq $i 0 }} active{{ end }}" href="{{ $p.link | relURL }}" data-title="{{ $p.title }}"{{ if $i }} aria-hidden="true" tabindex="-1"{{ end }}>
+                <img src="{{ $p.image | relURL }}" alt="{{ $p.alt }}" {{ if $i }}loading="lazy"{{ end }}>
+              </a>
+            {{ end }}
+          </div>
+          <div class="slide-caption">
+            {{ with index hugo.Data.projects 0 }}<a href="{{ .link | relURL }}" class="caption-link">{{ .title }}</a>{{ end }}
+            <div class="dots">
+              {{ range $i, $p := hugo.Data.projects }}
+                <button class="dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show {{ $p.title }}" data-index="{{ $i }}"></button>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  {{ partial "footer.html" . }}
+</div>
+{{ with resources.Get "js/slideshow.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{ end }}
+</body>
+</html>

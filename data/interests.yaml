@@ -1,0 +1,13 @@
+# "Stuff I do" list on the homepage. Each item is a link.
+- label: Game theory & multi-agent systems
+  url: /research/alpha-potential-traffic/
+- label: Safe exploitation & poker AI
+  url: /research/phi-divergence-leduc/
+- label: Network science
+  url: /research/network-assortativity/
+- label: Probability & stochastic processes
+  url: /cv/#coursework
+- label: Search & game-playing bots
+  url: /projects/century-golem/
+- label: Teaching & tutoring
+  url: /cv/#teaching

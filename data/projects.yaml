@@ -1,0 +1,17 @@
+# Homepage slideshow. Add a project by adding an entry here and an image in static/images/projects/.
+- title: α-Potential Games for Mixed-Autonomy Traffic
+  image: /images/projects/alpha-potential-traffic.jpg
+  alt: Heatmap of human-driven vehicle density on a ring road over time, with three autonomous vehicle trajectories overlaid
+  link: /research/alpha-potential-traffic/
+- title: φ-Divergences for Safe Exploitation in Leduc Hold'em
+  image: /images/projects/phi-divergence-leduc.jpg
+  alt: Stacked bar chart of which divergence the bandit picked across 20 seeds at each risk level
+  link: /research/phi-divergence-leduc/
+- title: Degree Assortativity Under Graph Unions
+  image: /images/projects/network-assortativity.jpg
+  alt: Network drawing of the union of two random graphs, nodes sized and colored by degree
+  link: /research/network-assortativity/
+- title: "Century: Golem Edition — engine, bots and solver"
+  image: /images/projects/century-golem.jpg
+  alt: Title card for the Century Golem Edition project with four crystal colors
+  link: /projects/century-golem/
