@@ -340,3 +340,44 @@
 .listTitle { text-transform: none; float: none; }
 .postListItem { text-align: left; border-radius: 8px; }
 .postListItem .postExcerpt { color: var(--muted); margin-top: 6px; }
+
+/* ---------- Paper viewer (click to turn pages) ---------- */
+.paper-viewer { margin: 36px 0 8px; outline: none; }
+.pv-stage {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  background: #fff;
+  user-select: none;
+}
+.paper-viewer:focus-visible .pv-stage { box-shadow: 0 0 0 3px var(--accent), 0 12px 30px rgba(0,0,0,.45); }
+.pv-page {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px !important;
+}
+.pv-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  font-family: 'Fira Mono', monospace;
+  font-size: .88em;
+  color: var(--muted) !important;
+}
+.pv-btn {
+  width: 38px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1em;
+  cursor: pointer;
+}
+.pv-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.pv-btn:disabled { opacity: .35; cursor: default; }
+.pv-count b { color: var(--text); font-weight: 500; }
+.pv-download { margin-left: auto; }
