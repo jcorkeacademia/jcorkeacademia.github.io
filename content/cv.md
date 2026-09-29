@@ -27,7 +27,7 @@ International Baccalaureate Diploma · 2021
 [Read more](/research/phi-divergence-leduc/)
 
 **Research Assistant, Network Science** · Middlebury College, with Prof. Philip Chodrow · Summer 2024 – Spring 2025
-Theoretical bounds for degree assortativity under graph unions. [Read more](/research/network-assortativity/)
+Theoretical bounds for degree assortativity under graph unions.
 
 ## <span id="teaching"></span>Teaching & experience
 

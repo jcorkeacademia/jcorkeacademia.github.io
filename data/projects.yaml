@@ -29,15 +29,16 @@
   figure: /images/projects/alpha-bound.jpg
   figure_alt: Section 5 of the report, deriving the alpha bound for the coupled autonomous and human-driven vehicle game
 
-- title: Degree Assortativity Under Graph Unions
-  link: /research/network-assortativity/
-  blurb: >-
-    What happens to a network's assortativity, the tendency of well-connected nodes to
-    link to each other, when two networks are merged? I derived bounds for assortativity
-    under graph unions and tested them with Monte Carlo simulations across
-    Erdős–Rényi, Barabási–Albert and configuration-model graphs.
-  image: /images/projects/network-wide.jpg
-  image_alt: Union of two random graphs, with nodes sized and colored by degree
+# Hidden for now; remove the "# " from these lines to show it again.
+# - title: Degree Assortativity Under Graph Unions
+#   link: /research/network-assortativity/
+#   blurb: >-
+#     What happens to a network's assortativity, the tendency of well-connected nodes to
+#     link to each other, when two networks are merged? I derived bounds for assortativity
+#     under graph unions and tested them with Monte Carlo simulations across
+#     Erdős–Rényi, Barabási–Albert and configuration-model graphs.
+#   image: /images/projects/network-wide.jpg
+#   image_alt: Union of two random graphs, with nodes sized and colored by degree
 
 - title: "Century: Golem Edition"
   link: /projects/century-golem/

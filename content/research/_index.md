@@ -2,4 +2,4 @@
 title: "Research"
 ---
 
-Projects in game theory, safe exploitation and network science.
+These projects are my work in game theory and safe exploitation.

@@ -1,6 +1,7 @@
 ---
 title: "Degree Assortativity Under Graph Unions"
 weight: 3
+draft: true   # hidden for now; change to false to show this page again
 summary: "Research assistant with Prof. Philip Chodrow, Middlebury College · 2024–2025"
 ---
 
