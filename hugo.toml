@@ -17,10 +17,6 @@ theme = "hugo-theme-nightfall"
     name = "projects"
     weight = 2
     url = "projects/"
-  [[menu.header]]
-    name = "cv"
-    weight = 3
-    url = "cv/"
 
 [params]
   user = "justin"
@@ -43,6 +39,8 @@ theme = "hugo-theme-nightfall"
     name = "Justin Dorjee Corke"
     email = "jcorkeacademia@gmail.com"
     photo = "/images/me.jpg"
+    # Linked as "C.V." under your email. Replace static/Justin-Corke-CV.pdf to update it.
+    cv = "/Justin-Corke-CV.pdf"
 
 # Optional profile links shown under your email on the homepage.
 # Uncomment and fill in the ones you want; they only appear once set.

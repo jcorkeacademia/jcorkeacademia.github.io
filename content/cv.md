@@ -1,5 +1,6 @@
 ---
 title: "CV"
+draft: true   # hidden; the C.V. link on the homepage now opens the PDF
 ---
 
 ## Education
