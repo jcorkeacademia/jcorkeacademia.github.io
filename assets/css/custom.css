@@ -63,12 +63,27 @@
   color: var(--accent);
 }
 
-/* Row 2: photo + bio */
-.intro {
+/* Sidebar + main column */
+.layout {
   display: grid;
   grid-template-columns: var(--side) 1fr;
   gap: var(--gap);
-  align-items: center;
+  align-items: start;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+/* Keep the sidebar in view while reading, on screens tall enough to fit it */
+@media (min-width: 761px) and (min-height: 860px) {
+  .sidebar { position: sticky; top: 28px; }
+}
+.main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  min-width: 0;
 }
 .intro-me {
   display: flex;
@@ -105,26 +120,25 @@
   font-size: .85em;
 }
 
-.bio {
-  border-left: 2px solid var(--accent);
-  padding: 2px 0 2px 32px;
-}
+/* About text: book-style indents, comfortable line length and spacing */
 .bio p {
-  margin: 0 0 1.1em;
-  line-height: 1.75;
-  font-size: 1.04em;
-  text-indent: 2em;
+  margin: 0 0 .9em;
+  font-size: 1.06em;
+  line-height: 1.8;
+  text-indent: 1.75em;
+  color: #e9e9ee;
 }
 .bio p:first-child { text-indent: 0; }
 .bio p:last-child { margin-bottom: 0; }
-
-/* Row 3: interests + slideshow */
-.work {
-  display: grid;
-  grid-template-columns: var(--side) 1fr;
-  gap: var(--gap);
-  align-items: stretch;
+.bio em { color: var(--text); }
+.bio a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(128,170,221,.45);
 }
+.bio a:hover { text-decoration-color: var(--accent); }
 .section-label {
   font-size: .8em;
   font-weight: 500;
@@ -143,12 +157,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  flex: 1;                     /* fill the column so the list spans the slideshow's height */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
-.interests li { padding: 12px 0; }
+.interests li { padding: 8px 0; }
 .interests li a {
   display: inline-block;
   position: relative;
@@ -241,11 +251,14 @@
   .edu-school { font-size: .9em; }
   .edu-degree { font-size: .75em; }
   .edu-arrow { transform: rotate(90deg); font-size: 1em; margin-left: 11px; line-height: 1.1; }
-  .intro, .work { grid-template-columns: 1fr; gap: 28px; }
-  .intro-me { max-width: 260px; margin: 0 auto; }
-  .bio { border-left: 0; padding: 0; }
-  .work .showcase-col { order: -1; }
-  .interests ul { flex: none; }
+  /* one column: photo, about, projects, then interests */
+  .layout { display: flex; flex-direction: column; gap: 44px; }
+  .sidebar, .main-col { display: contents; }
+  .intro-me { order: 1; max-width: 260px; margin: 0 auto; }
+  .about { order: 2; }
+  .showcase-col { order: 3; }
+  .interests { order: 4; width: 100%; }
+  .bio p { font-size: 1.02em; line-height: 1.75; }
 }
 
 /* ---------- Inner pages ---------- */

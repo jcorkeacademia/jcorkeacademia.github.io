@@ -25,55 +25,60 @@
         {{ end }}
       </section>
 
-      {{/* Row 2: photo + name | bio */}}
-      <section class="intro">
-        <div class="intro-me">
-          <img class="portrait" src="{{ site.Params.author.photo | relURL }}" alt="Photo of {{ site.Params.author.name }}">
-          <h1 class="name">{{ site.Params.author.name }}</h1>
-          <a class="email" href="mailto:{{ site.Params.author.email }}">{{ site.Params.author.email }}</a>
-          {{ with site.Params.links }}
-          <nav class="profile-links" aria-label="Profiles">
-            {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
-          </nav>
-          {{ end }}
-        </div>
-        <div class="bio">
-          {{ .Content }}
-        </div>
-      </section>
-
-      {{/* Row 3: interests | project slideshow */}}
-      <section class="work">
-        <div class="interests">
-          <h2 class="section-label">Stuff I do</h2>
-          <ul>
-            {{ range hugo.Data.interests }}
-              <li><a href="{{ .url | relURL }}">{{ .label }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-
-        <div class="showcase-col">
-        <h2 class="section-label">Selected work</h2>
-        <div class="showcase" data-interval="{{ site.Params.slideSeconds | default 5 }}" aria-roledescription="carousel" aria-label="Projects">
-          <div class="slides">
-            {{ range $i, $p := hugo.Data.projects }}
-              <a class="slide{{ if eq $i 0 }} active{{ end }}" href="{{ $p.link | relURL }}" data-title="{{ $p.title }}"{{ if $i }} aria-hidden="true" tabindex="-1"{{ end }}>
-                <img src="{{ $p.image | relURL }}" alt="{{ $p.alt }}" {{ if $i }}loading="lazy"{{ end }}>
-              </a>
+      {{/* Sidebar (photo, name, interests) | main column (bio, projects) */}}
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="intro-me">
+            <img class="portrait" src="{{ site.Params.author.photo | relURL }}" alt="Photo of {{ site.Params.author.name }}">
+            <h1 class="name">{{ site.Params.author.name }}</h1>
+            <a class="email" href="mailto:{{ site.Params.author.email }}">{{ site.Params.author.email }}</a>
+            {{ with site.Params.links }}
+            <nav class="profile-links" aria-label="Profiles">
+              {{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+            </nav>
             {{ end }}
           </div>
-          <div class="slide-caption">
-            {{ with index hugo.Data.projects 0 }}<a href="{{ .link | relURL }}" class="caption-link">{{ .title }}</a>{{ end }}
-            <div class="dots">
-              {{ range $i, $p := hugo.Data.projects }}
-                <button class="dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show {{ $p.title }}" data-index="{{ $i }}"></button>
+
+          <div class="interests">
+            <h2 class="section-label">Stuff I do</h2>
+            <ul>
+              {{ range hugo.Data.interests }}
+                <li><a href="{{ .url | relURL }}">{{ .label }}</a></li>
               {{ end }}
-            </div>
+            </ul>
           </div>
+        </aside>
+
+        <div class="main-col">
+          <section class="about">
+            <h2 class="section-label">About</h2>
+            <div class="bio">
+              {{ .Content }}
+            </div>
+          </section>
+
+          <section class="showcase-col">
+            <h2 class="section-label">Selected work</h2>
+            <div class="showcase" data-interval="{{ site.Params.slideSeconds | default 5 }}" aria-roledescription="carousel" aria-label="Projects">
+              <div class="slides">
+                {{ range $i, $p := hugo.Data.projects }}
+                  <a class="slide{{ if eq $i 0 }} active{{ end }}" href="{{ $p.link | relURL }}" data-title="{{ $p.title }}"{{ if $i }} aria-hidden="true" tabindex="-1"{{ end }}>
+                    <img src="{{ $p.image | relURL }}" alt="{{ $p.alt }}" {{ if $i }}loading="lazy"{{ end }}>
+                  </a>
+                {{ end }}
+              </div>
+              <div class="slide-caption">
+                {{ with index hugo.Data.projects 0 }}<a href="{{ .link | relURL }}" class="caption-link">{{ .title }}</a>{{ end }}
+                <div class="dots">
+                  {{ range $i, $p := hugo.Data.projects }}
+                    <button class="dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show {{ $p.title }}" data-index="{{ $i }}"></button>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-        </div>
-      </section>
+      </div>
 
     </main>
   </div>

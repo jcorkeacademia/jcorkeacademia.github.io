@@ -1,0 +1,4 @@
+{{- /* Same as the theme's link template, but without stray whitespace around links. External links open in a new tab. */ -}}
+{{- $external := strings.HasPrefix .Destination "http" -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if and site.Params.openLinksInNewTab $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* chomp */ -}}
