@@ -2,4 +2,4 @@
 title: "Projects"
 ---
 
-Things I've built.
+Things I've built (or am building).
