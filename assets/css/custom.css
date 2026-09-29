@@ -428,3 +428,47 @@
   color: #1f2023;
   text-decoration: none;
 }
+
+/* ---------- Education list in the sidebar (newest first) ---------- */
+.edu-side { list-style: none; margin: 22px 0 0; padding: 16px 0 0; border-top: 1px solid var(--line); width: 100%; text-align: left; display: flex; flex-direction: column; gap: 12px; }
+.edu-side a { display: flex; align-items: center; gap: 12px; color: var(--text); }
+.edu-side a:hover { text-decoration: none; }
+.edu-side a:hover b { color: var(--accent); }
+.edu-side img { width: 34px; height: 34px; border-radius: 7px; flex-shrink: 0; }
+.edu-side span { display: flex; flex-direction: column; line-height: 1.3; }
+.edu-side b { font-weight: 500; font-size: .9em; transition: color .15s ease; }
+.edu-side i { font-style: normal; font-family: 'Fira Mono', monospace; font-size: .74em; color: var(--muted); }
+
+/* ---------- About: highlight cards + full story toggle ---------- */
+.hl-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hl-card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; line-height: 1.55; color: #d9d9df; font-size: .95em; }
+.hl-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.hl-card b { display: block; color: var(--text); font-size: 1.04em; margin-bottom: 4px; }
+.hl-card p { margin: 0; }
+.hl-card a { color: var(--accent); }
+.hl-kicker { display: block; font-family: 'Fira Mono', monospace; font-size: .72em; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.story { margin-top: 22px; }
+.story summary { cursor: pointer; font-family: 'Fira Mono', monospace; font-size: .88em; color: var(--accent); list-style: none; display: inline-block; }
+.story summary::-webkit-details-marker { display: none; }
+.story summary::after { content: " ▾"; }
+.story[open] summary::after { content: " ▴"; }
+.story .bio { margin-top: 18px; }
+
+/* ---------- Research pages: status tag + key results box ---------- */
+.status { display: inline-block; margin: 0 0 16px; padding: 4px 12px; border-radius: 999px; font-family: 'Fira Mono', monospace; font-size: .76em; border: 1px solid; }
+.status.done { color: #6fcf97; border-color: rgba(111,207,151,.45); }
+.status.wip { color: #f2c94c; border-color: rgba(242,201,76,.45); }
+.keybox { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 6px 0 28px; }
+.keybox h4 { margin: 0 0 10px; font-size: .78em; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.keybox ul { margin: 0 0 14px; padding-left: 20px; }
+.keybox li { margin: 6px 0; line-height: 1.6; }
+.keybox .why { margin: 0; padding-top: 12px; border-top: 1px solid var(--line); color: #d9d9df; line-height: 1.6; }
+.keybox .why b { color: var(--text); }
+
+/* ---------- Project pages: stat tiles ---------- */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0 6px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.stat b { display: block; font-family: 'Fira Mono', monospace; font-size: 1.7em; color: var(--accent); line-height: 1.2; }
+.stat span { font-size: .88em; color: #d9d9df; line-height: 1.45; display: block; margin-top: 4px; }
+
+@media (max-width: 760px) { .hl-cards, .stats { grid-template-columns: 1fr; } }

@@ -4,6 +4,18 @@ weight: 2
 summary: "With Shayan Ravari, Department of Statistics, Columbia University"
 ---
 
+<span class="status done">Paper · Spring 2026</span>
+
+<div class="keybox">
+<h4>Key results</h4>
+<ul>
+<li><b>No single divergence is best.</b> The right choice depends on how much risk you are willing to take.</li>
+<li><b>Chasing winnings:</b> Jensen–Shannon wins (chosen in 19 of 20 runs). <b>Balanced:</b> Forward KL wins (17 of 20). <b>Safety first:</b> χ² with strong regularization wins, reaching the lowest exploitability of any strategy tested.</li>
+<li><b>Theory predicts practice.</b> Our bound gives χ² the tightest guarantee, and χ² is exactly what wins once safety matters most.</li>
+</ul>
+<p class="why"><b>Why it matters:</b> a practical rule for how aggressively an AI agent should exploit its model of an opponent, given its tolerance for risk. The same trade-off shows up anywhere you act on a guess about someone else's behavior, from poker bots to auctions and negotiation.</p>
+</div>
+
 ### Abstract
 
 We study how the choice of ϕ-divergence used to regularize a response policy shapes the Exploitation-Exploitability tradeoff in Leduc Hold'em. We sweep six standard divergences across a grid of regularization strengths λ and trace the resulting Pareto frontiers. We then derive a theoretical envelope bounding the Exploitability gap for each of the divergences in the set and compare the results to the Pareto frontiers. To study adaptive divergence selection, we frame the (ϕ, λ) choice problem as a multi-armed bandit and solve it with Thompson Sampling under different levels of risk tolerance. Opponent uncertainty is modeled through a Beta-distributed mixture of passive and aggressive strategies that varies from round to round. We learn that the high-EV leaders of the static frontier (Jensen-Shannon, Squared Hellinger) perform well in EV-focused regimes, but are subpar when the player is risk-averse. This is because they accumulate too much Exploitability to survive the properties of their divergence penalty. On the other hand, the moderate performers of the static frontier (Forward KL, Chi-Squared) perform the best in these risk-averse environments because they drive Exploitability down the most.

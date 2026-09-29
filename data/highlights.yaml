@@ -1,0 +1,16 @@
+# "About" cards on the homepage. Your full story (content/_index.md) opens below them.
+- kicker: Origin
+  title: Board games made me a strategist.
+  text: I grew up testing odd strategies against my dad, and losing until one finally worked. I've chased that feeling ever since.
+- kicker: Training
+  title: Now I test strategies with math.
+  text: M.A. in Statistics from Columbia and B.A. in Mathematics from Middlebury. Probability, optimization and game theory tell me which strategies actually work.
+- kicker: Research
+  title: Many decision-makers, one system.
+  text: Coordinating [self-driving cars around human drivers](/research/alpha-potential-traffic/), and [exploiting a poker opponent without becoming exploitable](/research/phi-divergence-leduc/).
+- kicker: Building
+  title: "Currently: Century."
+  text: An [online multiplayer version](/projects/century-golem/) of the board game, bots tuned for a fair game, and a solver that finds near-fastest wins.
+- kicker: Off the clock
+  title: Basketball, fantasy football, classic WoW.
+  text: Fantasy football is not looking good this season.

@@ -11,20 +11,6 @@
   <div class="content vertical">
     <main class="main home">
 
-      {{/* Row 1: education path (compact) */}}
-      <section class="edu" aria-label="Education">
-        {{ range $i, $e := hugo.Data.education }}
-          {{ if $i }}<span class="edu-arrow" aria-hidden="true">&#10230;</span>{{ end }}
-          <a class="edu-item" href="{{ $e.url }}" target="_blank" rel="noopener" title="{{ $e.degree }}, {{ $e.detail }} · {{ $e.school }}">
-            <img class="edu-crest" src="{{ $e.crest | relURL }}" alt="{{ $e.school }} crest" width="52" height="52">
-            <span class="edu-text">
-              <span class="edu-school">{{ $e.school }}</span>
-              <span class="edu-degree">{{ $e.degree }} · {{ $e.year }}</span>
-            </span>
-          </a>
-        {{ end }}
-      </section>
-
       {{/* Sidebar (photo, name, interests) | main column (bio, projects) */}}
       <div class="layout">
         <aside class="sidebar">
@@ -32,6 +18,16 @@
             <img class="portrait" src="{{ site.Params.author.photo | relURL }}" alt="Photo of {{ site.Params.author.name }}">
             <h1 class="name">{{ site.Params.author.name }}</h1>
             <a class="email" href="mailto:{{ site.Params.author.email }}">{{ site.Params.author.email }}</a>
+            <ul class="edu-side" aria-label="Education">
+              {{ range hugo.Data.education }}
+              <li>
+                <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .degree }}, {{ .detail }}">
+                  <img src="{{ .crest | relURL }}" alt="{{ .school }} crest" width="34" height="34">
+                  <span><b>{{ .school }}</b><i>{{ .degree }} · {{ .year }}</i></span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
             {{ with site.Params.author.cv }}
             <a class="cv-link" href="{{ . | relURL }}" target="_blank" rel="noopener">
               <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
@@ -60,9 +56,21 @@
         <div class="main-col">
           <section class="about">
             <h2 class="section-label">About</h2>
-            <div class="bio">
-              {{ .Content }}
+            <div class="hl-cards">
+              {{ range hugo.Data.highlights }}
+              <div class="hl-card">
+                <span class="hl-kicker">{{ .kicker }}</span>
+                <b>{{ .title }}</b>
+                <p>{{ .text | markdownify }}</p>
+              </div>
+              {{ end }}
             </div>
+            <details class="story">
+              <summary>Read the full story</summary>
+              <div class="bio">
+                {{ .Content }}
+              </div>
+            </details>
           </section>
 
         </div>

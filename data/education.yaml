@@ -1,19 +1,19 @@
-# Shown left to right with an arrow between them.
-- school: Baccalaureate School for Global Education
-  crest: /images/schools/bsge-crest.png
-  degree: IB Diploma
-  detail: International Baccalaureate Diploma
-  year: 2021
-  url: https://www.bsge.org
-- school: Middlebury College
-  crest: /images/schools/middlebury-crest.png
-  degree: B.A. Mathematics
-  detail: Minor in Computer Science
-  year: 2025
-  url: https://www.middlebury.edu
+# Newest first.
 - school: Columbia University
   crest: /images/schools/columbia-crest.png
   degree: M.A. Statistics
   detail: Theory & Methods
   year: 2026
   url: https://www.columbia.edu
+- school: Middlebury College
+  crest: /images/schools/middlebury-crest.png
+  degree: B.A. Mathematics
+  detail: Minor in Computer Science
+  year: 2025
+  url: https://www.middlebury.edu
+- school: Baccalaureate School for Global Education
+  crest: /images/schools/bsge-crest.png
+  degree: IB Diploma
+  detail: International Baccalaureate Diploma
+  year: 2021
+  url: https://www.bsge.org
