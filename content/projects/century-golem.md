@@ -1,21 +1,21 @@
 ---
-title: "Century: Golem Edition — engine, bots and solver"
+title: "Century — Simulation, tuning, optimal play solver"
 weight: 1
-summary: "An online version of the board game, with interpretable bots and a solver for the fastest possible win"
+summary: "An online version of the board game, bots tuned for a fair game, and a solver for the fastest possible win"
 ---
 
-An online implementation of the board game *Century: Golem Edition*, built engine-first: a single authoritative Python rules engine sits underneath the multiplayer server and all of the AI work, so the rules are never implemented twice.
+<figure class="hero-shot">
+  <img src="/images/projects/century-screenshot.jpg" alt="A five-player game in progress in the online version of Century: Golem Edition, with the golem row, merchant cards and the player's hand">
+</figure>
 
-**The platform**
+## Engine
 
-- A rules engine covering the full card set (43 merchant and 36 golem cards), verified against byte-identical state traces.
-- A FastAPI + WebSocket server with rooms, reconnects and a practice mode against bots at three difficulties.
-- A React client with a full game board, drag-to-pay and custom card art.
+<p class="soon">Multiplayer link coming soon</p>
 
-**The bots: what matters when playing?**
+## Tuning bots for a fair game
 
-Interpretable bots score positions with a weighted sum of twelve named features, tuned by evolutionary search (CMA-ES) over tens of thousands of games. The tuned bot beats a greedy baseline 97.9% of the time. Along the way the experiments suggested that ending the game fast beats scoring well, and that yellow crystals are worth far more than they look (magenta is worth about 2.3 yellows, not 4).
+<p class="soon">Coming soon</p>
 
-**The solver: how fast can one player win?**
+## Optimal play solver
 
-A branch-and-bound and beam-search solver, modeled on build-order optimization in StarCraft, looks for the fewest turns to six golems on a known deck. Across 500 deals, near-optimal plans win in 33.1 turns on average, against 43.3 for the tuned bot, with a proven bracket of lower and upper bounds for each deal. A guided mode in the live game highlights the solver's next move and re-plans when you leave the path.
+<p class="soon">Coming soon</p>

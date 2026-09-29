@@ -381,3 +381,28 @@
 .pv-btn:disabled { opacity: .35; cursor: default; }
 .pv-count b { color: var(--text); font-weight: 500; }
 .pv-download { margin-left: auto; }
+
+/* ---------- Project page: hero screenshot and "coming soon" notes ---------- */
+.postWrapper .hero-shot { margin: 8px 0 36px; }
+.postWrapper .hero-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+.postWrapper h2 {
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.3em;
+}
+.soon {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-family: 'Fira Mono', monospace;
+  font-size: .82em;
+  color: var(--muted);
+}
