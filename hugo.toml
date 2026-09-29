@@ -30,6 +30,9 @@ theme = "hugo-theme-nightfall"
   showMetadata = false
   footerHtml = "© 2026 Justin Dorjee Corke · built with <a class='footerLink' href='https://gohugo.io'>Hugo</a> and <a class='footerLink' href='https://github.com/LordMathis/hugo-theme-nightfall'>Nightfall</a>"
 
+  # Show the "Stuff I do" list under your photo (edit the links in data/interests.yaml)
+  showInterests = false
+
   # Seconds each project stays on screen in the homepage slideshow
   slideSeconds = 8
 
