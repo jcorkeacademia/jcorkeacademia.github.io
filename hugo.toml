@@ -31,7 +31,7 @@ theme = "hugo-theme-nightfall"
   footerHtml = "© 2026 Justin Dorjee Corke · built with <a class='footerLink' href='https://gohugo.io'>Hugo</a> and <a class='footerLink' href='https://github.com/LordMathis/hugo-theme-nightfall'>Nightfall</a>"
 
   # Seconds each project stays on screen in the homepage slideshow
-  slideSeconds = 5
+  slideSeconds = 8
 
   [params.styles]
     color = "blue"

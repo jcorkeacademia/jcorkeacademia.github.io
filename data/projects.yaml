@@ -1,17 +1,48 @@
-# Homepage slideshow. Add a project by adding an entry here and an image in static/images/projects/.
-- title: α-Potential Games for Mixed-Autonomy Traffic
-  image: /images/projects/alpha-potential-traffic.jpg
-  alt: Heatmap of human-driven vehicle density on a ring road over time, with three autonomous vehicle trajectories overlaid
-  link: /research/alpha-potential-traffic/
-- title: φ-Divergences for Safe Exploitation in Leduc Hold'em
-  image: /images/projects/phi-divergence-leduc.jpg
-  alt: Stacked bar chart of which divergence the bandit picked across 20 seeds at each risk level
+# "Selected work" slideshow on the homepage.
+# Each project shows a short overview on the left and either:
+#   - two images (`page` = first page of the paper, `figure` = a figure excerpt), or
+#   - one wide `image` (about 2.1 : 1, e.g. 1160x544) when there is no paper.
+# Images live in static/images/projects/.
+
+- title: "Dynamic φ-Divergence Selection for Safe Exploitation in Leduc Hold'em"
   link: /research/phi-divergence-leduc/
+  blurb: >-
+    How far should you stray from safe play to exploit a weak opponent? We compare six
+    φ-divergences as the penalty for deviating from Nash equilibrium in Leduc Hold'em,
+    bound the exploitability each one allows, and use a Thompson-sampling bandit to
+    pick the right divergence for each level of risk tolerance.
+  page: /images/projects/phi-page1.jpg
+  page_alt: First page of the paper, with the title and abstract
+  figure: /images/projects/phi-figure.jpg
+  figure_alt: Pareto frontiers of expected value against exploitability for six divergences
+
+- title: α-Potential Games for Mixed-Autonomy Traffic
+  link: /research/alpha-potential-traffic/
+  blurb: >-
+    Coordinating autonomous vehicles that share the road with human drivers. I extend
+    α-potential games to mixed traffic, modeling human drivers as a density that evolves
+    under an LWR conservation law, and derive a bound that keeps approximate Nash
+    equilibria computable as a single optimization problem.
+  page: /images/projects/alpha-page1.jpg
+  page_alt: First page of the report, with the title and introduction
+  figure: /images/projects/alpha-bound.jpg
+  figure_alt: Section 5 of the report, deriving the alpha bound for the coupled autonomous and human-driven vehicle game
+
 - title: Degree Assortativity Under Graph Unions
-  image: /images/projects/network-assortativity.jpg
-  alt: Network drawing of the union of two random graphs, nodes sized and colored by degree
   link: /research/network-assortativity/
-- title: "Century: Golem Edition — engine, bots and solver"
-  image: /images/projects/century-golem.jpg
-  alt: Title card for the Century Golem Edition project with four crystal colors
+  blurb: >-
+    What happens to a network's assortativity, the tendency of well-connected nodes to
+    link to each other, when two networks are merged? I derived bounds for assortativity
+    under graph unions and tested them with Monte Carlo simulations across
+    Erdős–Rényi, Barabási–Albert and configuration-model graphs.
+  image: /images/projects/network-wide.jpg
+  image_alt: Union of two random graphs, with nodes sized and colored by degree
+
+- title: "Century: Golem Edition"
   link: /projects/century-golem/
+  blurb: >-
+    A working online version of the board game, built engine-first. Tuned bots learn
+    which features matter most for winning, and a solver searches for the fastest
+    possible solo win: about 33 turns on average across 500 deals.
+  image: /images/projects/century-wide.jpg
+  image_alt: Title card for the Century Golem Edition project with four crystal colors

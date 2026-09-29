@@ -57,28 +57,42 @@
             </div>
           </section>
 
-          <section class="showcase-col">
-            <h2 class="section-label">Selected work</h2>
-            <div class="showcase" data-interval="{{ site.Params.slideSeconds | default 5 }}" aria-roledescription="carousel" aria-label="Projects">
-              <div class="slides">
-                {{ range $i, $p := hugo.Data.projects }}
-                  <a class="slide{{ if eq $i 0 }} active{{ end }}" href="{{ $p.link | relURL }}" data-title="{{ $p.title }}"{{ if $i }} aria-hidden="true" tabindex="-1"{{ end }}>
-                    <img src="{{ $p.image | relURL }}" alt="{{ $p.alt }}" {{ if $i }}loading="lazy"{{ end }}>
-                  </a>
-                {{ end }}
-              </div>
-              <div class="slide-caption">
-                {{ with index hugo.Data.projects 0 }}<a href="{{ .link | relURL }}" class="caption-link">{{ .title }}</a>{{ end }}
-                <div class="dots">
-                  {{ range $i, $p := hugo.Data.projects }}
-                    <button class="dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show {{ $p.title }}" data-index="{{ $i }}"></button>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
+
+      {{/* Selected work: one panel per project, cross-fading */}}
+      <section class="work" aria-roledescription="carousel" aria-label="Selected work">
+        <h2 class="work-heading">Selected work</h2>
+        <div class="showcase" data-interval="{{ site.Params.slideSeconds | default 8 }}">
+          <div class="slides">
+            {{ range $i, $p := hugo.Data.projects }}
+            <article class="slide{{ if eq $i 0 }} active{{ end }}"{{ if $i }} aria-hidden="true"{{ end }}>
+              <div class="slide-text">
+                {{ with $p.meta }}<p class="slide-meta">{{ . }}</p>{{ end }}
+                <p class="slide-blurb">{{ $p.blurb }}</p>
+                <a class="slide-more" href="{{ $p.link | relURL }}"{{ if $i }} tabindex="-1"{{ end }}>Read more <span aria-hidden="true">&rarr;</span></a>
+              </div>
+              <div class="slide-visual">
+                <a class="gallery{{ if $p.image }} single{{ end }}" href="{{ $p.link | relURL }}" tabindex="-1" aria-hidden="true">
+                  {{ if $p.image }}
+                    <img class="wide" src="{{ $p.image | relURL }}" alt="{{ $p.image_alt }}" loading="{{ cond (eq $i 0) "eager" "lazy" }}">
+                  {{ else }}
+                    <img class="paper page" src="{{ $p.page | relURL }}" alt="{{ $p.page_alt }}" loading="{{ cond (eq $i 0) "eager" "lazy" }}">
+                    <img class="paper figure" src="{{ $p.figure | relURL }}" alt="{{ $p.figure_alt }}" loading="{{ cond (eq $i 0) "eager" "lazy" }}">
+                  {{ end }}
+                </a>
+                <h3 class="slide-title"><a href="{{ $p.link | relURL }}"{{ if $i }} tabindex="-1"{{ end }}>{{ $p.title }}</a></h3>
+              </div>
+            </article>
+            {{ end }}
+          </div>
+          <div class="dots">
+            {{ range $i, $p := hugo.Data.projects }}
+              <button class="dot{{ if eq $i 0 }} active{{ end }}" aria-label="Show {{ $p.title }}" data-index="{{ $i }}"></button>
+            {{ end }}
+          </div>
+        </div>
+      </section>
 
     </main>
   </div>
