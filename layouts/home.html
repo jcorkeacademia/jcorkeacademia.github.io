@@ -56,17 +56,19 @@
         <div class="main-col">
           <section class="about">
             <h2 class="section-label">About</h2>
+            {{ with hugo.Data.about }}
+            <p class="about-summary">{{ .summary | markdownify }}</p>
             <div class="hl-cards">
-              {{ range hugo.Data.highlights }}
+              {{ range .cards }}
               <div class="hl-card">
                 <span class="hl-kicker">{{ .kicker }}</span>
-                <b>{{ .title }}</b>
                 <p>{{ .text | markdownify }}</p>
               </div>
               {{ end }}
             </div>
+            {{ end }}
             <details class="story">
-              <summary>Read the full story</summary>
+              <summary>{{ hugo.Data.about.more | default "A little more about me" }}</summary>
               <div class="bio">
                 {{ .Content }}
               </div>

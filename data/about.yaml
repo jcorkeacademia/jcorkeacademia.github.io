@@ -1,0 +1,24 @@
+# Homepage "About" section. Edit the wording here.
+# Links use markdown: [text](/path/).
+
+summary: >-
+  I'm a statistician and aspiring researcher, recently graduated from Columbia's M.A. program
+  in Statistics. I love finding the best possible move, especially in the parts most relevant
+  to my life: building bots for multiplayer strategy games, min-maxing my fantasy football
+  lineups, and finding the optimal questing route in classic *World of Warcraft*. This site is
+  a brief overview of what I've worked on so far, and the questions I'm still chasing.
+
+cards:
+  - kicker: Research
+    text: >-
+      I'm most interested in where probability and game theory meet. So far, that has led me to
+      [coordinating self-driving cars around human drivers](/research/alpha-potential-traffic/)
+      and to [exploiting opponents in poker without becoming exploitable yourself](/research/phi-divergence-leduc/).
+  - kicker: Currently building
+    text: >-
+      Inspired by a board game my friends and I played constantly in college, I built an online
+      multiplayer version of [*Century*](/projects/century-golem/), along with my own simulation
+      environment for testing the many strategies I've wanted to try.
+
+# Label of the link that opens the full story (content/_index.md)
+more: A little more about me

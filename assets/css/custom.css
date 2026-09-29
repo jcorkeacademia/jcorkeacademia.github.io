@@ -472,3 +472,12 @@
 .stat span { font-size: .88em; color: #d9d9df; line-height: 1.45; display: block; margin-top: 4px; }
 
 @media (max-width: 760px) { .hl-cards, .stats { grid-template-columns: 1fr; } }
+
+/* ---------- About summary ---------- */
+.about-summary {
+  margin: 0 0 22px;
+  font-size: 1.12em;
+  line-height: 1.7;
+  color: var(--text);
+}
+.hl-card p { font-size: 1.02em; line-height: 1.65; }
