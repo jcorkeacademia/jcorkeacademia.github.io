@@ -19,10 +19,11 @@
 - title: α-Potential Games for Mixed-Autonomy Traffic
   link: /research/alpha-potential-traffic/
   blurb: >-
-    Coordinating autonomous vehicles that share the road with human drivers. I extend
-    α-potential games to mixed traffic, modeling human drivers as a density that evolves
-    under an LWR conservation law, and derive a bound that keeps approximate Nash
-    equilibria computable as a single optimization problem.
+    How does one safely coordinate autonomous vehicles (CAVs) that share the road with
+    human drivers (HDVs)? Taking from game theory, I extend α‑potential games to the mixed
+    traffic formulation, modeling HDVs as a density that evolves under an LWR conservation
+    law, and derive a bound that keeps approximate Nash equilibria computable as a single
+    optimization problem.
   page: /images/projects/alpha-page1.jpg
   page_alt: First page of the report, with the title and introduction
   figure: /images/projects/alpha-bound.jpg
@@ -41,8 +42,9 @@
 - title: "Century: Golem Edition"
   link: /projects/century-golem/
   blurb: >-
-    A working online version of the board game, built engine-first. Tuned bots learn
-    which features matter most for winning, and a solver searches for the fastest
-    possible solo win: about 33 turns on average across 500 deals.
-  image: /images/projects/century-wide.jpg
-  image_alt: Title card for the Century Golem Edition project with four crystal colors
+    This is a working online version of the board game. I am currently working on making
+    this public for anyone to play at any time. What I have done so far includes developing
+    tuned bots that learn which features matter most for winning and a solver that searches
+    for the fastest possible solo win: roughly 33 turns on average across 500 instances.
+  image: /images/projects/century-game.jpg
+  image_alt: A five-player game in progress in the online Century Golem Edition, with the golem row, merchant cards and the player's hand
