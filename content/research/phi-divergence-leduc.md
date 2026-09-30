@@ -6,15 +6,9 @@ summary: "With Shayan Ravari, Department of Statistics, Columbia University"
 
 <span class="status done">Paper · Spring 2026</span>
 
-<div class="keybox">
-<h4>Key results</h4>
-<ul>
-<li><b>No single divergence is best.</b> The right choice depends on how much risk you are willing to take.</li>
-<li><b>Chasing winnings:</b> Jensen–Shannon wins (chosen in 19 of 20 runs). <b>Balanced:</b> Forward KL wins (17 of 20). <b>Safety first:</b> χ² with strong regularization wins, reaching the lowest exploitability of any strategy tested.</li>
-<li><b>Theory predicts practice.</b> Our bound gives χ² the tightest guarantee, and χ² is exactly what wins once safety matters most.</li>
-</ul>
-<p class="why"><b>Why it matters:</b> a practical rule for how aggressively an AI agent should exploit its model of an opponent, given its tolerance for risk. The same trade-off shows up anywhere you act on a guess about someone else's behavior, from poker bots to auctions and negotiation.</p>
-</div>
+### Key results
+
+We found that no single divergence is best for navigating the EV–Exploitability trade-off. The right choice depends on how much risk you are willing to take. For instance, if you are **chasing wins**, Jensen–Shannon is best (chosen in 19/20 runs), and if you want a **balanced** approach, choose Forward KL (17/20). If **safety** is your utmost concern, χ² with strong regularization (large λ) is best, since it has the lowest exploitability of any strategy tested. Our paper provides a practical rule for how aggressively a poker bot should exploit its model of an opponent, given its tolerance for risk.
 
 ### Abstract
 

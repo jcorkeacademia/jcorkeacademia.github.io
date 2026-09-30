@@ -4,17 +4,9 @@ weight: 1
 summary: "M.A. mentored research with Prof. Sharon Di, Columbia University · 2026"
 ---
 
-<span class="status wip">Theory complete under stated assumptions · Simulations in progress</span>
+### Key results
 
-<div class="keybox">
-<h4>Key results</h4>
-<ul>
-<li><b>A bound for mixed traffic.</b> The error of the single-optimization shortcut splits into the car-to-car term from the pure-autonomous case plus one new term for the human-traffic "spillover", which we bound with a PDE stability estimate.</li>
-<li><b>Consistent with prior work.</b> If human traffic does not react to the autonomous cars, the original bound is recovered exactly.</li>
-<li><b>A working algorithm.</b> A fixed-point scheme that alternates between optimizing car policies and re-solving the traffic PDE, implemented in Python.</li>
-</ul>
-<p class="why"><b>Why it matters:</b> a fleet of self-driving cars can reach stable, near-equilibrium behavior around human drivers by solving one optimization problem, instead of a full many-player game. That is a path to coordination that scales without a central controller.</p>
-</div>
+We showed that the α-potential framework carries over from fleets of self-driving cars to mixed traffic with human drivers. Building on Professor Di's paper, we introduce a new human-traffic spillover term for the CAVs to consider, which we bound using a stability result for traffic flow equations (under regularity conditions we are still verifying). To test the bound in practice, we built a simulation that alternates between training the cars' policies and re-solving the traffic flow equations. If the regularity conditions hold, a fleet of self-driving cars could coordinate around human drivers by solving one optimization problem, without a central controller.
 
 ### Abstract
 

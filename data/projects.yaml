@@ -7,10 +7,10 @@
 - title: "Dynamic φ-Divergence Selection for Safe Exploitation in Leduc Hold'em"
   link: /research/phi-divergence-leduc/
   blurb: >-
-    How far should you stray from safe play to exploit a weak opponent? We compare six
-    φ-divergences as the penalty for deviating from Nash equilibrium in Leduc Hold'em,
-    bound the exploitability each one allows, and use a Thompson-sampling bandit to
-    pick the right divergence for each level of risk tolerance.
+    How far should you stray from safe play to exploit a weak opponent? We found there's no
+    single best answer: the right penalty for deviating from Nash equilibrium depends on your
+    tolerance for risk, and our theoretical bound predicts which one wins. The result is a
+    practical rule for any AI agent acting on a model of its opponent.
   page: /images/projects/phi-page1.jpg
   page_alt: First page of the paper, with the title and abstract
   figure: /images/projects/phi-figure.jpg
@@ -20,10 +20,10 @@
   link: /research/alpha-potential-traffic/
   blurb: >-
     How does one safely coordinate autonomous vehicles (CAVs) that share the road with
-    human drivers (HDVs)? Taking from game theory, I extend α‑potential games to the mixed
-    traffic formulation, modeling HDVs as a density that evolves under an LWR conservation
-    law, and derive a bound that keeps approximate Nash equilibria computable as a single
-    optimization problem.
+    human drivers (HDVs)? Taking from game theory, I extend α‑potential games to mixed traffic
+    and derive a bound showing that a fleet can still reach near-equilibrium behavior by
+    solving a single optimization problem, a step toward coordinating self-driving cars at
+    scale without a central controller.
   page: /images/projects/alpha-page1.jpg
   page_alt: First page of the report, with the title and introduction
   figure: /images/projects/alpha-bound.jpg
