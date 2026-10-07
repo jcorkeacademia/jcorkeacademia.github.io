@@ -12,6 +12,8 @@ summary: "An online version of the board game, bots tuned for a fair game, and a
 
 <p class="soon">Multiplayer link coming soon</p>
 
+In the meantime, the code is on [GitHub](https://github.com/jcorkeacademia/century-golem-ai).
+
 ## Tuning bots for a fair game
 
 I tuned interpretable bots, each of which scores a position with a weighted sum of twelve named features, using evolutionary search over tens of thousands of games. The tuned bot beats a greedy baseline 97.9% of the time. I then used the learned weights to build a better heuristic for the game. For instance, the model supports the idea that ending the game fast beats going for higher-point cards, that yellow crystals are worth far more than they look (roughly 2.3 yellows to 1 magenta), and that tracking your opponent's card cycle is largely irrelevant (those features were not significant).
